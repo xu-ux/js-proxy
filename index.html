@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>代理服务</title>
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/icon/earth16x16.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/icon/earth32x32.svg">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css" rel="stylesheet"></link>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <!--<base target="_blank">-->
+    <base href="." target="_blank">
+    <style>
+        body {
+            padding: 0;
+        }
+        
+        .box {
+            margin-top: 1em;
+        }
+        
+        #btnGo {
+            width: 100%;
+        }
+        
+        #list a {
+            margin: 1em;
+        }
+        
+        .content-box {
+            margin: 0 auto;
+            padding-top: 2rem;
+        }
+        
+        .go-box {
+            margin-top: 1rem;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-box">
+            <div class="card bg-danger text-white">
+                <div class="card-body">
+                    <i class='fas fa-info-circle'></i>
+                    <span>请勿用于非法途径！</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row go-box">
+            <div class="col-9">
+                <input id="txtURL" class="form-control" type="text" value="www.google.com" autofocus="">
+            </div>
+            <div class="col">
+                <button id="btnGo" class="btn btn-primary">Go</button>
+            </div>
+
+
+        </div>
+        <!-- <div class="box">
+    <span>切换线路:</span>
+                    <select id="selNode"><option id="--demo-hk" value="demo-hk">演示服务-香港节点</option><option id="--demo-sg" value="demo-sg">演示服务-新加坡节点</option><option id="--mysite" value="mysite">当前站点</option></select>
+                </div> -->
+        <div class="box" id="list">
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.google.com/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/google.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.youtube.com/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/youtube.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://twitter.com/google"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/twitter.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.flickr.com/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/flickr.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.quora.com/topic/JavaScript-programming-language"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/quora.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.twitch.tv/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/twitch.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.reddit.com/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/reddit.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://zh.wikipedia.org/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/wiki.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://gist.github.com/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/gist.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://facebook.com/Google/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/facebook.png"></a>
+            <a rel="noopener noreferrer" href="https://etherdream.github.io/jsproxy/-----https://www.blogger.com/"><img width="128" height="128" src="https://cdn.jsdelivr.net/gh/xu-ux/js-proxy@main/public/img/blogger.png"></a>
+        </div>
+    </div>
+
+
+
+    <div class="xl-chrome-ext-bar" id="xl_chrome_ext_{4DB361DE-01F7-4376-B494-639E489D19ED}" style="display: none;">
+        <div class="xl-chrome-ext-bar__logo"></div>
+
+        <a id="xl_chrome_ext_download" href="javascript:;" class="xl-chrome-ext-bar__option">下载视频</a>
+        <a id="xl_chrome_ext_close" href="javascript:;" class="xl-chrome-ext-bar__close"></a>
+    </div>
+    </div>
+
+</body>
+<script>
+    const PAGE_CONF_SET = 110
+    const PAGE_CONF_GET = 111
+
+    const SW_CONF_RETURN = 112
+    const SW_CONF_CHANGE = 113
+
+    const PAGE_READY_CHECK = 200
+    const SW_READY = 201
+
+    const sw = navigator.serviceWorker
+
+
+    sw.addEventListener('message', onSwMsg)
+    sendMsgToSw(PAGE_READY_CHECK)
+
+    btnGo.onclick = function() {
+        const text = txtURL.value.trim()
+        if (text) {
+            const url = './-----' + text
+            open(url, '_blank', 'noopener,noreferrer')
+        }
+    }
+    txtURL.onkeypress = function(e) {
+        if (e.keyCode === 13) {
+            btnGo.onclick()
+        }
+    }
+    txtURL.setSelectionRange(0, txtURL.value.length)
+
+
+    function onSwMsg(e) {
+        const [cmd, msg] = e.data
+
+        switch (cmd) {
+            case SW_CONF_RETURN:
+                conf = msg
+                showConf()
+                break
+
+            case SW_CONF_CHANGE:
+                conf = msg
+                updateSelected()
+                break
+
+            case SW_READY:
+                console.log('sw ready')
+                showIcons()
+                sendMsgToSw(PAGE_CONF_GET)
+                break
+        }
+    }
+
+    function onSwFail(err) {
+        txtURL.value = err
+    }
+
+    selNode.onchange = function() {
+        const item = this.options[this.selectedIndex]
+        const node = item.value
+        conf.node_default = node
+        sendMsgToSw(PAGE_CONF_SET, conf)
+    }
+
+    function sendMsgToSw(cmd, val) {
+        const ctl = sw.controller
+        if (!ctl) {
+            console.log('ctl is null')
+            return
+        }
+        ctl.postMessage([cmd, val])
+    }
+
+    const SITE_LIST = [
+        ['google', ''],
+        ['youtube', ''],
+        ['twitter', 'twitter.com/google'],
+        ['flickr', ''],
+        ['quora', 'www.quora.com/topic/JavaScript-programming-language'],
+        ['twitch', 'www.twitch.tv/'],
+        ['reddit', ''],
+        ['wiki', 'zh.wikipedia.org/'],
+        ['gist', 'gist.github.com/'],
+        ['facebook', 'facebook.com/Google/'],
+        ['blogger', ''],
+    ]
+
+    function showIcons() {
+        list.innerHTML = SITE_LIST.map(v => {
+            let [id, url] = v
+            url = url || `www.${id}.com/`
+            return `\
+<a rel="noopener noreferrer" href=./-----https://${url}>\
+<img width=128 height=128 src=__sys__/assets/ico/${id}.png></a>`
+        }).join('')
+    }
+
+    function addNodeItem(id, text) {
+        const optEl = document.createElement('option')
+        optEl.id = '--' + id
+        optEl.text = text
+        optEl.value = id
+        selNode.appendChild(optEl)
+    }
+
+    function updateSelected() {
+        const id = conf.node_default
+        const item = document.getElementById('--' + id)
+        if (item) {
+            item.selected = true
+        } else {
+            console.warn('unknown node:', id)
+        }
+    }
+
+    function showConf() {
+        for (const [id, node] of Object.entries(conf.node_map)) {
+            if (!node.hidden) {
+                addNodeItem(id, node.label)
+            }
+        }
+        updateSelected()
+    }
+</script>
+
+</html>
